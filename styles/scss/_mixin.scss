@@ -1,0 +1,23 @@
+@mixin textStyle ($size , $width,$color) {
+    font-size: $size;
+    font-weight: $width;
+    color:$color ;
+    font-family: 'Roboto';  
+}
+@mixin media ($size) {
+    @if ($size==S) {
+        @media (max-width:768px) {
+            @content
+        }   
+    }
+    @else if ($size==M){
+        @media (min-width:768px) and( max-width:1200px) {
+            @content
+        }
+    }
+}
+@mixin bodyStyle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
